@@ -60,6 +60,6 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: poly-optimization-app
+          serviceName: poly-optimization-app-service
           servicePort: 80
 
