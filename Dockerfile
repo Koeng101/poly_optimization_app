@@ -7,5 +7,6 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /go/bin/poly_optimization_
 
 FROM scratch
 COPY --from=builder /go/bin/poly_optimization_app /poly_optimization_app
+COPY data /data
 ENTRYPOINT ["/poly_optimization_app"]
 EXPOSE 8080

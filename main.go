@@ -27,6 +27,7 @@ func createNewOptimization(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(reqBody, &s)
 	newSeq := poly.Optimize(s.Sequence, optimizationTable)
 	json.NewEncoder(w).Encode(newSeq)
+	fmt.Println("Endpoint Hit: /optimize")
 }
 
 func handleRequests() {

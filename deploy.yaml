@@ -25,7 +25,7 @@ spec:
               memory: "128Mi"
               cpu: "500m"
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -58,8 +58,8 @@ spec:
   - host: codonoptimizer.com
     http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: poly-optimization-app-service
           servicePort: 80
+        path: /
 
